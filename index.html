@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>My sales</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="github, wdonadelli, wd, XSQLite, PSWrequest">
+		<meta name="author" content="Willian Donadelli"/>
+		<meta name="description" content="Example to demonstrate the union of wd, XSQLite and PSWrequest tools / libraries."/>
+		<meta name="rating" content="general" />
+		<meta name="revisit-after" content="2 days" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<script src="http://localhost/git/wd/v2/wd.js"></script>
+		<link  href="http://localhost/git/wd/v2/wd.css" rel="stylesheet" />
+		<style>
+	</style>
+	</head>
+<body class="wd-text-justify">
+
+	<!--MAIN PAGE-->
+	<main class="wd-flyer">
+
+		<!--HEADER-->
+		<header class="wd-head wd-box-blue">
+			<h1>My sales</h1>
+		</header>
+
+		<!--MAIN NAV-->
+		<nav class="wd-nav wd-box-black">
+			<a href="#" class="wd-icon-user"   data-wd-action="tab{#clients}">Clients</a>
+			<a href="#" class="wd-icon-attach" data-wd-action="tab{#products}">Products</a>
+			<a href="#" class="wd-icon-money"  data-wd-action="tab{#sales}" data-wd-click="">Sales</a>
+		</nav>
+		
+		<!--SUB MENUS TAB-->
+		<section>
+			<article class="wd-flyer" id="clients">
+				<nav class="wd-nav wd-vertical">
+					<span class="wd-icon-plus" data-wd-action="open{#insertClients}">Insert Clients</span>
+					<span class="wd-icon-reload" data-wd-action="open{#updateClients}">Update Clients</span>
+					<span class="wd-icon-minus" data-wd-action="open{#clients}">Delete Clients</span>
+					<span class="wd-icon-copy" data-wd-action="open{#clients}">Table Clients</span>
+					<span class="wd-icon-paste" data-wd-action="open{#clients}">Log Clients</span>
+				</nav>
+			</article>
+			<article class="wd-flyer" id="products">
+				<nav class="wd-nav wd-vertical">
+					<span class="wd-icon-plus" data-wd-action="open{#insertProducts}">Insert Products</span>
+					<span class="wd-icon-reload" data-wd-action="open{#updateProducts}">Update Products</span>
+					<span class="wd-icon-minus" data-wd-action="open{#deleteProducts}">Delete Products</span>
+					<span class="wd-icon-copy" data-wd-action="open{#tableProducts}">Table Products</span>
+					<span class="wd-icon-paste" data-wd-action="open{#logProducts}">Log Products</span>
+				</nav>
+			</article>
+			<article class="wd-flyer" id="sales">
+				<nav class="wd-nav wd-vertical">
+					<span class="wd-icon-plus"   data-wd-action="open{#insertSales}">Insert Sales</span>
+					<span class="wd-icon-reload" data-wd-action="open{#updateSales}">Update Sales</span>
+					<span class="wd-icon-minus"  data-wd-action="open{#deleteSales}">Delete Sales</span>
+					<span class="wd-icon-copy" data-wd-action="open{#tableSales}">Table Sales</span>
+					<span class="wd-icon-paste" data-wd-action="open{#logSales}">Log Sales</span>
+				</nav>
+			</article>
+		</section>
+
+		<!--FORMS INSERT-->
+		<section id="insertClients" class="wd-window wd-flyer wd-box-white wd-win-full">
+			<header class="wd-head wd-box-purple" >
+				<h2>Insert Clients</h2>
+			</header>
+			<form class="wd-vform wd-xmargin" id="formInsertClients">
+				<label class="wd-label">Name</label>
+				<input type="text" name="name" class="wd-input" />
+				<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+				<label class="wd-label">Date of birth</label>
+				<input type="date" name="birth" class="wd-input" />
+				<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+				<label class="wd-label">Document number</label>
+				<input type="number" name="doc" class="wd-input" />
+				<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+				<div class="wd-hform wd-margin">
+					<button type="button" data-wd-action="close{#insertClients}" class="wd-button wd-box-red wd-icon-left">Close</button>
+					<button type="button" class="wd-button wd-box-blue wd-icon-plus">Add</button>
+				</div>
+			</form>
+		</section>
+
+		<section id="insertProducts" class="wd-window wd-flyer wd-box-white wd-win-full">
+			<header class="wd-head wd-box-purple" >
+				<h2>Insert Products</h2>
+			</header>
+			<form class="wd-vform wd-xmargin" id="formInsertProducts">
+				<label class="wd-label">Name</label>
+				<input type="text" name="name" class="wd-input" />
+				<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+				<div class="wd-hform wd-margin">
+					<button type="button" data-wd-action="close{#insertProducts}" class="wd-button wd-box-red wd-icon-left">Close</button>
+					<button type="button" class="wd-button wd-box-blue wd-icon-plus">Add</button>
+				</div>
+			</form>
+		</section>
+
+		<section id="insertSales" class="wd-window wd-flyer wd-box-white wd-win-full">
+			<header class="wd-head wd-box-purple" >
+				<h2>Insert Sales</h2>
+			</header>
+			<form class="wd-vform wd-xmargin" id="formInsertSales">
+				<label class="wd-label">Client</label>
+				<select name="client_id" class="wd-input" >
+					<option value="{{_id_}}">{{name}}</option>
+				</select>
+				<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+				<label class="wd-label">Product</label>
+				<select type="date" name="product_id" class="wd-input" >
+					<option value="{{_id_}}">{{name}}</option>
+				</select>
+				<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+				<label class="wd-label">Value</label>
+				<input type="number" name="value" class="wd-input" />
+				<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+				<div class="wd-hform wd-margin">
+					<button type="button" data-wd-action="close{#insertSales}" class="wd-button wd-box-red wd-icon-left">Close</button>
+					<button type="button" class="wd-button wd-box-blue wd-icon-plus">Add</button>
+				</div>
+			</form>
+		</section>
+
+		<!--FORMS UPDATE-->
+		<section id="updateClients" class="wd-window wd-flyer wd-box-white wd-win-full wd-open">
+			<header class="wd-head wd-box-purple" >
+				<h2>Update Clients</h2>
+			</header>
+			<form class="wd-vform wd-xmargin" id="formUpdateClients">
+				<label class="wd-label">Client</label>
+				<select name="_id_" class="wd-input" >
+					<option value="{{_id_}}">{{name}}</option>
+				</select>
+				<div class="wd-input-help wd-text-small wd-text-blue">Inform the customer to be changed.</div>
+				<label class="wd-label">Name</label>
+				<input type="text" name="name" class="wd-input" />
+				<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+				<label class="wd-label">Date of birth</label>
+				<input type="date" name="birth" class="wd-input" />
+				<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+				<label class="wd-label">Document number</label>
+				<input type="number" name="doc" class="wd-input" />
+				<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+				<div class="wd-hform wd-margin">
+					<button type="button" data-wd-action="close{#updateClients}" class="wd-button wd-box-red wd-icon-left">Close</button>
+					<button type="button" class="wd-button wd-box-blue wd-icon-plus">Add</button>
+				</div>
+			</form>
+		</section>
+
+
+
+
+
+
+
+	</main>
+</body>
+</html>
