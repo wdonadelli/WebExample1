@@ -1,0 +1,21 @@
+<header class="wd-head wd-box-red" >
+	<h2>Delete Clients</h2>
+</header>
+<form class="wd-vform wd-xmargin" id="formDeleteClients">
+	<label class="wd-label">Client</label>
+	<select name="_id_" class="wd-input" >
+		<option value="{{_id_}}">{{name}}</option>
+	</select>
+	<div class="wd-input-help wd-text-small wd-text-blue">Inform the customer to be deleted.</div>
+	<label class="wd-label">Name</label>
+	<input type="text" name="name" class="wd-input" readOnly="" />
+	<label class="wd-label">Date of birth</label>
+	<input type="text" name="birth" class="wd-input" readOnly=""  />
+	<label class="wd-label">Document number</label>
+	<input type="text" name="doc" class="wd-input" readOnly=""  />
+	<div class="wd-hform wd-margin">
+		<button type="button" data-wd-action="close{#deleteClients}" class="wd-button wd-box-red wd-icon-left">Close</button>
+		<button type="button" class="wd-button wd-box-blue wd-icon-minus">Delete</button>
+	</div>
+</form>
+

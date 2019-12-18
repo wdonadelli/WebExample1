@@ -1,0 +1,27 @@
+<header class="wd-head wd-box-purple" >
+	<h2>Insert Clients</h2>
+</header>
+<form class="wd-vform wd-xmargin" id="formInsertClients">
+	<label class="wd-label">Name</label>
+	<input type="text" name="name" class="wd-input" />
+	<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+	<label class="wd-label">Date of birth</label>
+	<input type="date" name="birth" class="wd-input" />
+	<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+	<label class="wd-label">Document number</label>
+	<input type="number" name="doc" class="wd-input" />
+	<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+	<div class="wd-hform wd-margin">
+		<button
+			type="button"
+			class="wd-button wd-box-red wd-icon-left"
+			data-wd-action="close{#insertClients}"
+		>Close</button>
+		<button
+			type="button"
+			class="wd-button wd-box-blue wd-icon-plus"
+			data-wd-request="post{lib/insertClients.php?${#formInsertClients > *}}method{request}"
+		>Insert</button>
+	</div>
+</form>
+

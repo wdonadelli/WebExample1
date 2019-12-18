@@ -1,0 +1,35 @@
+<nav class="wd-nav wd-vertical">
+	<span
+		class="wd-icon-plus"
+		data-wd-action="open{#insertSales}"
+		data-wd-data="
+			wdRepeat{get{lib/myReports.php?tab=Clients}}${#formInsertSales select[name='client_id']}&
+			wdRepeat{get{lib/myReports.php?tab=Products}}${#formInsertSales select[name='product_id']}
+		"
+	>Insert Sales</span>
+	<span
+		class="wd-icon-reload"
+		data-wd-action="open{#updateSales}"
+		data-wd-data="
+			wdRepeat{get{lib/myReports.php?tab=Clients}}${#formUpdateSales select[name='client_id']}&
+			wdRepeat{get{lib/myReports.php?tab=Products}}${#formUpdateSales select[name='product_id']}&
+			wdRepeat{get{lib/myReports.php?tab=Sales}}${#formUpdateSales select[name='_id_']}
+		"
+	>Update Sales</span>
+	<span
+		class="wd-icon-minus"
+		data-wd-action="open{#deleteSales}"
+		data-wd-data="wdRepeat{get{lib/myReports.php?tab=Sales}}${#formDeleteSales select[name='_id_']}"
+	>Delete Sales</span>
+	<span
+		class="wd-icon-copy"
+		data-wd-action="open{#tableSales}"
+		data-wd-data="wdRepeat{get{lib/myReports.php?tab=Sales}}${#listSales}"
+	>Table Sales</span>
+	<span
+		class="wd-icon-paste"
+		data-wd-action="open{#logSales}"
+		data-wd-data="wdRepeat{get{lib/myReports.php?tab=logSales}}${#listLogSales}"
+	>Log Sales</span>
+</nav>
+
