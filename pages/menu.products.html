@@ -1,26 +1,28 @@
 <nav class="wd-nav wd-vertical">
 	<span
 		class="wd-icon-plus"
-		data-wd-action="open{#insertProducts}"
+		data-wd-action="open{#window}"
+		data-wd-data="wdLoad{get{pages/insert.products.html}}${#window}"
 	>Insert Products</span>
 	<span
 		class="wd-icon-reload"
-		data-wd-action="open{#updateProducts}"
-		data-wd-data="wdRepeat{get{lib/myReports.php?tab=Products}}${#formUpdateProducts select[name='_id_']}"
+		data-wd-action="open{#window}"
+		data-wd-data="wdLoad{get{pages/update.products.html}}${#window}"
 	>Update Products</span>
 	<span
 		class="wd-icon-minus"
-		data-wd-action="open{#deleteProducts}"
-		data-wd-data="wdRepeat{get{lib/myReports.php?tab=Products}}${#formDeleteProducts select[name='_id_']}"
+		data-wd-action="open{#window}"
+		data-wd-data="wdLoad{get{pages/delete.products.html}}${#window}"
 	>Delete Products</span>
 	<span
 		class="wd-icon-copy"
-		data-wd-action="open{#tableProducts}"
-		data-wd-data="wdRepeat{get{lib/myReports.php?tab=Products}}${#listProducts}"
+		data-wd-action="open{#window}"
+		data-wd-data="wdLoad{get{pages/table.products.html}}${#window}"
 	>Table Products</span>
 	<span
 		class="wd-icon-paste"
-		data-wd-action="open{#logProducts}"
-		data-wd-data="wdRepeat{get{lib/myReports.php?tab=logProducts}}${#listLogProducts}"
+		data-wd-action="open{#window}"
+		data-wd-data="wdLoad{get{pages/log.products.html}}${#window}"
 	>Log Products</span>
 </nav>
+

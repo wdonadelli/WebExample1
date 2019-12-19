@@ -1,0 +1,26 @@
+<header class="wd-head wd-box-brown">
+	<h2>
+		<span	class="wd-icon-left"	data-wd-action="close{#window}"></span>
+		<span>Update Products</span>
+	</h2>
+</header>
+
+<form id="form" class="wd-vform wd-xmargin">
+
+	<label class="wd-label">Product</label>
+	<select name="_id_" class="wd-input" >
+		<option value="{{_id_}}">{{name}}</option>
+	</select>
+	<div class="wd-input-help wd-text-small wd-text-blue">Inform the product to be changed.</div>
+
+	<label class="wd-label">Name</label>
+	<input type="text" name="name" class="wd-input" />
+	<div class="wd-input-help wd-text-small wd-text-blue">Enter product name (required)</div>
+
+	<button
+		type="button"
+		class="wd-button wd-box-blue wd-icon-reload"
+		data-wd-request="post{lib/updateProducts.php?${#form > *}}method{request}"
+	>Update</button>
+
+</form>

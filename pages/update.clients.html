@@ -1,23 +1,34 @@
-<header class="wd-head wd-box-brown" >
-	<h2>Update Clients</h2>
+<header class="wd-head wd-box-brown">
+	<h2>
+		<span	class="wd-icon-left"	data-wd-action="close{#window}"></span>
+		<span>Update Clients</span>
+	</h2>
 </header>
-<form class="wd-vform wd-xmargin" id="formUpdateClients">
+
+<form id="form" class="wd-vform wd-xmargin">
+
 	<label class="wd-label">Client</label>
 	<select name="_id_" class="wd-input" >
 		<option value="{{_id_}}">{{name}}</option>
 	</select>
 	<div class="wd-input-help wd-text-small wd-text-blue">Inform the customer to be changed.</div>
+
 	<label class="wd-label">Name</label>
 	<input type="text" name="name" class="wd-input" />
-	<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+	<div class="wd-input-help wd-text-small wd-text-blue">Enter customer name (required)</div>
+
 	<label class="wd-label">Date of birth</label>
 	<input type="date" name="birth" class="wd-input" />
-	<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+	<div class="wd-input-help wd-text-small wd-text-blue">Enter the client's date of birth (required)</div>
+
 	<label class="wd-label">Document number</label>
 	<input type="number" name="doc" class="wd-input" />
-	<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
-	<div class="wd-hform wd-margin">
-		<button type="button" data-wd-action="close{#updateClients}" class="wd-button wd-box-red wd-icon-left">Close</button>
-		<button type="button" class="wd-button wd-box-blue wd-icon-reload">Update</button>
-	</div>
+	<div class="wd-input-help wd-text-small wd-text-blue">Enter customer document number (required)</div>
+
+	<button
+		type="button"
+		class="wd-button wd-box-blue wd-icon-reload"
+		data-wd-request="post{lib/updateClients.php?${#form > *}}method{request}"
+	>Update</button>
+
 </form>

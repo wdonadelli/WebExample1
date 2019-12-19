@@ -1,27 +1,29 @@
-<header class="wd-head wd-box-purple" >
-	<h2>Insert Clients</h2>
+<header class="wd-head wd-box-purple">
+	<h2>
+		<span	class="wd-icon-left"	data-wd-action="close{#window}"></span>
+		<span>Insert Clients</span>
+	</h2>
 </header>
-<form class="wd-vform wd-xmargin" id="formInsertClients">
+
+<form	id="form" class="wd-vform wd-xmargin">
+
 	<label class="wd-label">Name</label>
 	<input type="text" name="name" class="wd-input" />
-	<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+	<div class="wd-input-help wd-text-small wd-text-blue">Enter customer name (required)</div>
+
 	<label class="wd-label">Date of birth</label>
 	<input type="date" name="birth" class="wd-input" />
-	<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
+	<div class="wd-input-help wd-text-small wd-text-blue">Enter the client's date of birth (required)</div>
+
 	<label class="wd-label">Document number</label>
 	<input type="number" name="doc" class="wd-input" />
-	<div class="wd-input-help wd-text-small wd-text-blue">Required field</div>
-	<div class="wd-hform wd-margin">
-		<button
-			type="button"
-			class="wd-button wd-box-red wd-icon-left"
-			data-wd-action="close{#insertClients}"
-		>Close</button>
-		<button
-			type="button"
-			class="wd-button wd-box-blue wd-icon-plus"
-			data-wd-request="post{lib/insertClients.php?${#formInsertClients > *}}method{request}"
-		>Insert</button>
-	</div>
+	<div class="wd-input-help wd-text-small wd-text-blue">Enter customer document number (required)</div>
+
+	<button
+		type="button"
+		class="wd-button wd-box-blue wd-icon-plus"
+		data-wd-request="post{lib/insertClients.php?${#form > *}}method{request}"
+	>Insert</button>
+
 </form>
 
