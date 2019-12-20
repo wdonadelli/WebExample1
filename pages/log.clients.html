@@ -11,13 +11,24 @@
 			<tr>
 				<th data-wd-sort-col="">Date</th>
 				<th data-wd-sort-col="">Event</th>
-				<th data-wd-sort-col="">Row</th>
+				<th data-wd-sort-col="">ID</th>
 				<th data-wd-sort-col="">Name</th>
 				<th data-wd-sort-col="">Birth</th>
-				<th data-wd-sort-col="">Document</th></tr>
+				<th data-wd-sort-col="">Document</th>
+			</tr>
 		</thead>
-		<tbody id="listLogClients" class="wd-box-upon-child">
-			<tr><td>{{_log_}}</td><td>{{_event_}}</td><td>{{_id_}}</td><td>{{name}}</td><td>{{birth}}</td><td>{{doc}}</td></tr>
+		<tbody
+			class="wd-box-upon-child"
+			data-wd-repeat="get{lib/myReports.php?tab=logclients}"
+		>
+			<tr>
+				<td>{{_log_}}</td>
+				<td>{{_event_}}</td>
+				<td>{{_id_}}</td>
+				<td>{{name}}</td>
+				<td>{{birth}}</td>
+				<td>{{doc}}</td>
+			</tr>
 		</tbody>
 	</table>
 </div>

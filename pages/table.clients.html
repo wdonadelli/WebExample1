@@ -9,13 +9,22 @@
 	<table class="wd-table">
 		<thead>
 			<tr>
-				<th data-wd-sort-col="">Row</th>
+				<th data-wd-sort-col="">ID</th>
 				<th data-wd-sort-col="">Name</th>
 				<th data-wd-sort-col="">Birth</th>
-				<th data-wd-sort-col="">Document</th></tr>
+				<th data-wd-sort-col="">Document</th>
+			</tr>
 		</thead>
-		<tbody id="listClients" class="wd-box-upon-child">
-			<tr><td>{{_id_}}</td><td>{{name}}</td><td>{{birth}}</td><td>{{doc}}</td></tr>
+		<tbody
+			class="wd-box-upon-child"
+			data-wd-repeat="get{lib/myReports.php?tab=clients}"
+		>
+			<tr>
+				<td>{{clients._id_}}</td>
+				<td>{{clients.name}}</td>
+				<td>{{clients.birth}}</td>
+				<td>{{clients.doc}}</td>
+			</tr>
 		</tbody>
 	</table>
 </div>

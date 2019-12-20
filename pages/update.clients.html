@@ -8,8 +8,12 @@
 <form id="form" class="wd-vform wd-xmargin">
 
 	<label class="wd-label">Client</label>
-	<select name="_id_" class="wd-input" >
-		<option value="{{_id_}}">{{name}}</option>
+	<select
+		name="_id_"
+		class="wd-input"
+		data-wd-repeat="get{lib/myReports.php?tab=clients}"
+	>
+		<option value="{{clients._id_}}">{{clients.name}}</option>
 	</select>
 	<div class="wd-input-help wd-text-small wd-text-blue">Inform the customer to be changed.</div>
 

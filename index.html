@@ -27,46 +27,19 @@
 		</header>
 
 		<!--MAIN NAV-->
-		<nav class="wd-nav wd-box-black">
-			<a
-				href="#"
-				class="wd-icon-user"
-				data-wd-action="tab{#menu_clients}"
-				data-wd-click=""
-			>Clients</a>
-			<a
-				href="#"
-				class="wd-icon-attach"
-				data-wd-action="tab{#menu_products}"
-			>Products</a>
-			<a
-				href="#"
-				class="wd-icon-money"
-				data-wd-action="tab{#menu_sales}"
-			>Sales</a>
+		<nav class="wd-nav wd-box-black wd-text-title" data-wd-repeat="get{pages/menu.json}" >
+			<a	data-wd-action="{{action}}" {{click}} href="#" class="{{icon}}" >{{menu}}</a>
 		</nav>
 		
 		<!--SUB MENUS TAB-->
-		<section>
-			<article
-				id="menu_home"
-				class="wd-flyer"
-			></article>
-			<article
-				id="menu_clients"
-				class="wd-flyer"
-				data-wd-load="get{pages/menu.clients.html}"
-			></article>
-			<article
-				id="menu_products"
-				class="wd-flyer"
-				data-wd-load="get{pages/menu.products.html}"
-			></article>
-			<article
-				id="menu_sales"
-				class="wd-flyer"
-				data-wd-load="get{pages/menu.sales.html}"
-			></article>
+		<section data-wd-repeat="get{pages/menu.json}">
+			<article id="{{id}}" class="wd-flyer">
+				<nav class="wd-nav wd-vertical wd-text-title">
+					<span data-wd-action="open{#window}" data-wd-data="{{insert}}" class="wd-icon-plus"   >Insert {{menu}}</span>
+					<span	data-wd-action="open{#window}" data-wd-data="{{update}}" class="wd-icon-reload" >Update {{menu}}</span>
+					<span data-wd-action="open{#window}" data-wd-data="{{table}}"  class="wd-icon-copy"   >Table {{menu}}</span>
+					<span data-wd-action="open{#window}" data-wd-data="{{log}}"    class="wd-icon-paste"  >Log {{menu}}</span>
+				</nav>
 		</section>
 
 		<!--FORMS WINDOW-->

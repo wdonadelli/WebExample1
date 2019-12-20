@@ -4,25 +4,26 @@ require "PSWrequest.php";
 $request = new PSWrequest("mySales.db");
 
 switch($_GET["tab"]) {
-	case "Clients":
-		$request->view("clients");
+	case "clients":
+		$request->view("_vw_clients");
 		break;
-	case "logClients":
-		$request->view("_clients_");
+	case "logclients":
+		$request->view("_log_clients");
 		break;
-	case "Products":
-		$request->view("products");
+	case "products":
+		$request->view("_vw_products");
 		break;
-	case "logProducts":
-		$request->view("_products_");
+	case "logproducts":
+		$request->view("_log_products_");
 		break;
-	case "Sales":
-		$request->view("sales");
+	case "sales":
+		$request->view("_vw_sales");
 		break;
-	case "logSales":
-		$request->view("_sales_");
+	case "logsales":
+		$request->view("_log_sales_");
 		break;
 };
 
 $request->getQuery();
+$request->close();
 ?>
