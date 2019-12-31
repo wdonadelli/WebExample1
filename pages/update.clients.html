@@ -8,31 +8,58 @@
 <form id="form" class="wd-vform wd-xmargin">
 
 	<label class="wd-label">Client</label>
-	<select
-		name="_id_"
-		class="wd-input"
-		data-wd-repeat="get{lib/myReports.php?tab=clients}"
-	>
-		<option value="{{clients._id_}}">{{clients.name}}</option>
-	</select>
-	<div class="wd-input-help wd-text-small wd-text-blue">Inform the customer to be changed.</div>
+	<input type="search" placeholder="Find the customer" class="wd-input" data-wd-filter="hide{}${#search}" />
 
-	<label class="wd-label">Name</label>
-	<input type="text" name="name" class="wd-input" />
-	<div class="wd-input-help wd-text-small wd-text-blue">Enter customer name (required)</div>
+	<div id="search" class="wd-margin-height" data-wd-repeat="get{lib/myReports.php?tab=clients}">
+		<div class="wd-box-upon wd-border wd-radius">
+			<label class="wd-label">
+				<div class="wd-box-row">
+					<div class="wd-box-col-01" style="position: relative">
+						<input type="radio" name="_id_" class="wd-input wd-box-central" value="{{clients._id_}}"/>
+					</div>
+					<div class="wd-box-row-11">
+						<div class="wd-b">{{clients.name}}</div>
+						<div class="wd-i">{{clients.birth}}</div>
+						<div class="wd-i">{{clients.doc}}</div>
+					</div>
+				</div>
+			</label>
+		</div>
+	</div>
 
-	<label class="wd-label">Date of birth</label>
-	<input type="date" name="birth" class="wd-input" />
-	<div class="wd-input-help wd-text-small wd-text-blue">Enter the client's date of birth (required)</div>
+	<nav class="wd-nav wd-xxmargin-top wd-box-greyf">
+		<a href="#delete" data-wd-action="tab{#delete}" data-wd-click="">Delete</a>
+		<a href="#update" data-wd-action="tab{#update}">Update</a>
+	</nav>
+	
+	<div class="wd-xpadding wd-border wd-radius-bottom">
+		<div id="update" class="wd-vform">
+			<label class="wd-label">New name</label>
+			<input type="text" name="name" class="wd-input" />
+			<div class="wd-input-help wd-text-small wd-text-blue">Enter customer name</div>
 
-	<label class="wd-label">Document number</label>
-	<input type="number" name="doc" class="wd-input" />
-	<div class="wd-input-help wd-text-small wd-text-blue">Enter customer document number (required)</div>
+			<label class="wd-label">New date of birth</label>
+			<input type="date" name="birth" class="wd-input" />
+			<div class="wd-input-help wd-text-small wd-text-blue">Enter the client's date of birth</div>
 
-	<button
-		type="button"
-		class="wd-button wd-box-blue wd-icon-reload"
-		data-wd-request="post{lib/updateClients.php?${#form > *}}method{request}"
-	>Update</button>
+			<label class="wd-label">New document number</label>
+			<input type="number" name="doc" class="wd-input" />
+			<div class="wd-input-help wd-text-small wd-text-blue">Enter customer document number</div>
+
+			<button
+				type="button"
+				class="wd-button wd-box-blue wd-icon-reload"
+				data-wd-request="post{lib/updateClients.php?${#form *}}method{request}"
+			>Update</button>
+		</div>
+
+		<div id="delete" class="wd-vform">
+			<button
+				type="button"
+				class="wd-button wd-box-red wd-icon-close"
+				data-wd-request="post{lib/deleteClients.php?${#form *}}method{request}"
+			>Delete</button>
+		</div>
+	</div>
 
 </form>
