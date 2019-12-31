@@ -1,5 +1,5 @@
 <?php
-$table  = "clients";
+$table  = "products";
 $action = 1;
 require "crud.php";
 ?>

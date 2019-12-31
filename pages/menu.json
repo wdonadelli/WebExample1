@@ -5,10 +5,8 @@
 		"id":     "menu_clients",
 		"action": "tab{#menu_clients}",
 		"click":  "data-wd-click=\"\"",
-		"insert": "wdLoad{get{pages/insert.clients.html}}${#window}",
 		"update": "wdLoad{get{pages/update.clients.html}}${#window}",
-		"table":  "wdLoad{get{pages/table.clients.html}}${#window}",
-		"log":    "wdLoad{get{pages/log.clients.html}}${#window}"
+		"tables": "wdLoad{get{pages/tables.clients.html}}${#window}"
 	},
 	{
 		"menu":   "products",
@@ -16,10 +14,8 @@
 		"id":     "menu_products",
 		"action": "tab{#menu_products}",
 		"click":  "",
-		"insert": "wdLoad{get{pages/insert.products.html}}${#window}",
 		"update": "wdLoad{get{pages/update.products.html}}${#window}",
-		"table":  "wdLoad{get{pages/table.products.html}}${#window}",
-		"log":    "wdLoad{get{pages/log.products.html}}${#window}"
+		"tables": "wdLoad{get{pages/tables.products.html}}${#window}"
 	},
 	{
 		"menu":   "sales",
@@ -27,9 +23,7 @@
 		"id":     "menu_sales",
 		"action": "tab{#menu_sales}",
 		"click":  "",
-		"insert": "wdLoad{get{pages/insert.sales.html}}${#window}",
 		"update": "wdLoad{get{pages/update.sales.html}}${#window}",
-		"table":  "wdLoad{get{pages/table.sales.html}}${#window}",
-		"log":    "wdLoad{get{pages/log.sales.html}}${#window}"
+		"tables": "wdLoad{get{pages/tables.sales.html}}${#window}"
 	}
 ]

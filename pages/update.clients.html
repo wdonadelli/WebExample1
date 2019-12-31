@@ -1,65 +1,102 @@
-<header class="wd-head wd-box-brown">
+<header class="wd-head wd-box-green">
 	<h2>
 		<span	class="wd-icon-left"	data-wd-action="close{#window}"></span>
-		<span>Update Clients</span>
+		<span>Clients</span>
 	</h2>
 </header>
 
-<form id="form" class="wd-vform wd-xmargin">
+<nav class="wd-nav">
+	<a href="#window" data-wd-action="tab{#norecords, #form, #insert}" data-wd-click="" class="wd-icon-plus">Insert</a>
+	<a href="#window" data-wd-action="tab{#records, #form, #update}" class="wd-icon-reload">Update</a>
+	<a href="#window" data-wd-action="tab{#records, #noform, #delete}" class="wd-icon-close">Delete</a>
+</nav>
 
-	<label class="wd-label">Client</label>
-	<input type="search" placeholder="Find the customer" class="wd-input" data-wd-filter="hide{}${#search}" />
+<form class="wd-vform wd-xmargin">
 
-	<div id="search" class="wd-margin-height" data-wd-repeat="get{lib/myReports.php?tab=clients}">
-		<div class="wd-box-upon wd-border wd-radius">
-			<label class="wd-label">
-				<div class="wd-box-row">
-					<div class="wd-box-col-01" style="position: relative">
-						<input type="radio" name="_id_" class="wd-input wd-box-central" value="{{clients._id_}}"/>
-					</div>
-					<div class="wd-box-row-11">
-						<div class="wd-b">{{clients.name}}</div>
-						<div class="wd-i">{{clients.birth}}</div>
-						<div class="wd-i">{{clients.doc}}</div>
-					</div>
+
+	<!-- Records -->
+	<div>
+
+		<div id="norecords"></div>
+
+		<div id="records" class="wd-xpadding wd-border wd-radius wd-vform">
+
+			<label class="wd-label">Records</label>
+			<input type="search" placeholder="Find the record" class="wd-input" data-wd-filter="hide{}${#search}" />
+
+			<div id="search" class="wd-margin-height" data-wd-repeat="get{lib/myReports.php?tab=clients}">
+				<div class="wd-box-upon wd-border wd-radius">
+					<label class="wd-label">
+						<div class="wd-box-row">
+							<div class="wd-box-col-01" style="position: relative">
+								<input type="radio" name="_id_" class="wd-input wd-box-central" value="{{clients._id_}}"/>
+							</div>
+							<div class="wd-box-row-11">
+								<div class="wd-b">{{clients.name}}</div>
+								<div class="wd-i">{{clients.birth}}</div>
+								<div class="wd-i">{{clients.doc}}</div>
+							</div>
+						</div>
+					</label>
 				</div>
-			</label>
+			</div>
+
 		</div>
+
 	</div>
 
-	<nav class="wd-nav wd-xxmargin-top wd-box-greyf">
-		<a href="#delete" data-wd-action="tab{#delete}" data-wd-click="">Delete</a>
-		<a href="#update" data-wd-action="tab{#update}">Update</a>
-	</nav>
-	
-	<div class="wd-xpadding wd-border wd-radius-bottom">
-		<div id="update" class="wd-vform">
-			<label class="wd-label">New name</label>
+	<!-- Forms -->
+	<div>
+
+		<div id="noform"></div>
+
+		<div id="form" class="wd-xpadding wd-border wd-radius wd-vform">
+
+			<label class="wd-label">Name</label>
 			<input type="text" name="name" class="wd-input" />
 			<div class="wd-input-help wd-text-small wd-text-blue">Enter customer name</div>
 
-			<label class="wd-label">New date of birth</label>
+			<label class="wd-label">Date of birth</label>
 			<input type="date" name="birth" class="wd-input" />
 			<div class="wd-input-help wd-text-small wd-text-blue">Enter the client's date of birth</div>
 
-			<label class="wd-label">New document number</label>
+			<label class="wd-label">Document number</label>
 			<input type="number" name="doc" class="wd-input" />
 			<div class="wd-input-help wd-text-small wd-text-blue">Enter customer document number</div>
 
-			<button
-				type="button"
-				class="wd-button wd-box-blue wd-icon-reload"
-				data-wd-request="post{lib/updateClients.php?${#form *}}method{request}"
-			>Update</button>
 		</div>
 
-		<div id="delete" class="wd-vform">
+	</div>
+
+	<!-- Actions -->
+	<div>
+		<div id="noactions"></div>
+
+		<div id="records" class="wd-xpadding wd-border wd-radius wd-vform">
+
 			<button
+				id="insert"
+				type="button"
+				class="wd-button wd-box-green wd-icon-plus"
+				data-wd-request="post{lib/insertClients.php?${#form *}}method{request}"
+			>Insert</button>
+
+			<button
+				id="update"
+				type="button"
+				class="wd-button wd-box-orange wd-icon-reload"
+				data-wd-request="post{lib/updateClients.php?${#form *, #records *}}method{request}"
+			>Update</button>
+
+			<button
+				id="delete"
 				type="button"
 				class="wd-button wd-box-red wd-icon-close"
-				data-wd-request="post{lib/deleteClients.php?${#form *}}method{request}"
+				data-wd-request="post{lib/deleteClients.php?${#records *}}method{request}"
 			>Delete</button>
+
 		</div>
+
 	</div>
 
 </form>

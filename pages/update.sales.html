@@ -1,38 +1,106 @@
-<header class="wd-head wd-box-brown">
+<header class="wd-head wd-box-green">
 	<h2>
 		<span	class="wd-icon-left"	data-wd-action="close{#window}"></span>
-		<span>Update Sales</span>
+		<span>Sales</span>
 	</h2>
 </header>
 
-<form id="form" class="wd-vform wd-xmargin">
+<nav class="wd-nav">
+	<a href="#window" data-wd-action="tab{#norecords, #form, #insert}" data-wd-click="" class="wd-icon-plus">Insert</a>
+	<a href="#window" data-wd-action="tab{#records, #form, #update}" class="wd-icon-reload">Update</a>
+	<a href="#window" data-wd-action="tab{#records, #noform, #delete}" class="wd-icon-close">Delete</a>
+</nav>
 
-	<label class="wd-label">Sale</label>
-	<select name="_id_" class="wd-input" >
-		<option value="{{_id_}}">{{name}}</option>
-	</select>
-	<div class="wd-input-help wd-text-small wd-text-blue">Inform the sales to be changed.</div>
+<form class="wd-vform wd-xmargin">
 
-	<label class="wd-label">Client</label>
-	<select name="client_id" class="wd-input" >
-		<option value="{{_id_}}">{{name}}</option>
-	</select>
-	<div class="wd-input-help wd-text-small wd-text-blue">Inform the customer (required)</div>
 
-	<label class="wd-label">Product</label>
-	<select name="product_id" class="wd-input" >
-		<option value="{{_id_}}">{{name}}</option>
-	</select>
-	<div class="wd-input-help wd-text-small wd-text-blue">Enter the product (required)</div>
+	<!-- Records -->
+	<div>
 
-	<label class="wd-label">Value</label>
-	<input type="number" name="value" class="wd-input" />
-	<div class="wd-input-help wd-text-small wd-text-blue">Enter product price (required)</div>
+		<div id="norecords"></div>
 
-	<button
-		type="button"
-		class="wd-button wd-box-blue wd-icon-reload"
-		data-wd-request="post{lib/updateSales.php?${#form > *}}method{request}"
-	>Update</button>
+		<div id="records" class="wd-xpadding wd-border wd-radius wd-vform">
+
+			<label class="wd-label">Records</label>
+			<input type="search" placeholder="Find the record" class="wd-input" data-wd-filter="hide{}${#search}" />
+
+			<div id="search" class="wd-margin-height" data-wd-repeat="get{lib/myReports.php?tab=sales}">
+				<div class="wd-box-upon wd-border wd-radius">
+					<label class="wd-label">
+						<div class="wd-box-row">
+							<div class="wd-box-col-01" style="position: relative">
+								<input type="radio" name="_id_" class="wd-input wd-box-central" value="{{sales._id_}}"/>
+							</div>
+							<div class="wd-box-row-11">
+								<div class="wd-b">{{clients.name}}</div>
+								<div class="wd-b">{{products.name}}</div>
+								<div class="wd-i">{{sales.value}}</div>
+							</div>
+						</div>
+					</label>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Forms -->
+	<div>
+
+		<div id="noform"></div>
+
+		<div id="form" class="wd-xpadding wd-border wd-radius wd-vform">
+
+			<label class="wd-label">Client</label>
+			<select name="client_id" class="wd-input" data-wd-repeat="get{lib/myReports.php?tab=clients}">
+				<option value="{{clients._id_}}">{{clients.name}}</option>
+			</select>
+			<div class="wd-input-help wd-text-small wd-text-blue">Inform the customer</div>
+
+			<label class="wd-label">Product</label>
+			<select name="product_id" class="wd-input" data-wd-repeat="get{lib/myReports.php?tab=products}">
+				<option value="{{products._id_}}">{{products.name}}</option>
+			</select>
+			<div class="wd-input-help wd-text-small wd-text-blue">Enter the product</div>
+
+			<label class="wd-label">Value</label>
+			<input type="number" name="value" class="wd-input" />
+			<div class="wd-input-help wd-text-small wd-text-blue">Enter product price</div>
+
+		</div>
+
+	</div>
+
+	<!-- Actions -->
+	<div>
+		<div id="noactions"></div>
+
+		<div id="records" class="wd-xpadding wd-border wd-radius wd-vform">
+
+			<button
+				id="insert"
+				type="button"
+				class="wd-button wd-box-green wd-icon-plus"
+				data-wd-request="post{lib/insertSales.php?${#form *}}method{request}"
+			>Insert</button>
+
+			<button
+				id="update"
+				type="button"
+				class="wd-button wd-box-orange wd-icon-reload"
+				data-wd-request="post{lib/updateSales.php?${#form *, #records *}}method{request}"
+			>Update</button>
+
+			<button
+				id="delete"
+				type="button"
+				class="wd-button wd-box-red wd-icon-close"
+				data-wd-request="post{lib/deleteSales.php?${#records *}}method{request}"
+			>Delete</button>
+
+		</div>
+
+	</div>
 
 </form>

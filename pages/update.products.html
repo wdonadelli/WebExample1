@@ -1,26 +1,92 @@
-<header class="wd-head wd-box-brown">
+<header class="wd-head wd-box-green">
 	<h2>
 		<span	class="wd-icon-left"	data-wd-action="close{#window}"></span>
-		<span>Update Products</span>
+		<span>Products</span>
 	</h2>
 </header>
 
-<form id="form" class="wd-vform wd-xmargin">
+<nav class="wd-nav">
+	<a href="#window" data-wd-action="tab{#norecords, #form, #insert}" data-wd-click="" class="wd-icon-plus">Insert</a>
+	<a href="#window" data-wd-action="tab{#records, #form, #update}" class="wd-icon-reload">Update</a>
+	<a href="#window" data-wd-action="tab{#records, #noform, #delete}" class="wd-icon-close">Delete</a>
+</nav>
 
-	<label class="wd-label">Product</label>
-	<select name="_id_" class="wd-input" >
-		<option value="{{_id_}}">{{name}}</option>
-	</select>
-	<div class="wd-input-help wd-text-small wd-text-blue">Inform the product to be changed.</div>
+<form class="wd-vform wd-xmargin">
 
-	<label class="wd-label">Name</label>
-	<input type="text" name="name" class="wd-input" />
-	<div class="wd-input-help wd-text-small wd-text-blue">Enter product name (required)</div>
 
-	<button
-		type="button"
-		class="wd-button wd-box-blue wd-icon-reload"
-		data-wd-request="post{lib/updateProducts.php?${#form > *}}method{request}"
-	>Update</button>
+	<!-- Records -->
+	<div>
+
+		<div id="norecords"></div>
+
+		<div id="records" class="wd-xpadding wd-border wd-radius wd-vform">
+
+			<label class="wd-label">Records</label>
+			<input type="search" placeholder="Find the record" class="wd-input" data-wd-filter="hide{}${#search}" />
+
+			<div id="search" class="wd-margin-height" data-wd-repeat="get{lib/myReports.php?tab=products}">
+				<div class="wd-box-upon wd-border wd-radius">
+					<label class="wd-label">
+						<div class="wd-box-row">
+							<div class="wd-box-col-01" style="position: relative">
+								<input type="radio" name="_id_" class="wd-input wd-box-central" value="{{products._id_}}"/>
+							</div>
+							<div class="wd-box-row-11">
+								<div class="wd-b">{{products.name}}</div>
+							</div>
+						</div>
+					</label>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Forms -->
+	<div>
+
+		<div id="noform"></div>
+
+		<div id="form" class="wd-xpadding wd-border wd-radius wd-vform">
+
+			<label class="wd-label">Name</label>
+			<input type="text" name="name" class="wd-input" />
+			<div class="wd-input-help wd-text-small wd-text-blue">Enter product name</div>
+
+		</div>
+
+	</div>
+
+	<!-- Actions -->
+	<div>
+		<div id="noactions"></div>
+
+		<div id="records" class="wd-xpadding wd-border wd-radius wd-vform">
+
+			<button
+				id="insert"
+				type="button"
+				class="wd-button wd-box-green wd-icon-plus"
+				data-wd-request="post{lib/insertProducts.php?${#form *}}method{request}"
+			>Insert</button>
+
+			<button
+				id="update"
+				type="button"
+				class="wd-button wd-box-orange wd-icon-reload"
+				data-wd-request="post{lib/updateProducts.php?${#form *, #records *}}method{request}"
+			>Update</button>
+
+			<button
+				id="delete"
+				type="button"
+				class="wd-button wd-box-red wd-icon-close"
+				data-wd-request="post{lib/deleteProducts.php?${#records *}}method{request}"
+			>Delete</button>
+
+		</div>
+
+	</div>
 
 </form>
