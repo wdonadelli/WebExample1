@@ -8,7 +8,7 @@ This project consists of a simple registration application to demonstrate the in
 
 The app has a table for recording customer data, another table for recording product data and a third table for recording product sales to customers. The app was called "My Sales".
 
-The tables were built using the XML structure contained in the [mySales.xml](https://github.com/wdonadelli/WebExample1/objects/mySales.xml) file that resulted in the (mySales.sql)[https://github.com/wdonadelli/WebExample1/objects/mySales.sql] file (see [XSQLite](https://github.com/wdonadelli/XSQLite)), no improvements were made to SQL statements.
+The tables were built using the XML structure contained in the [mySales.xml](https://github.com/wdonadelli/WebExample1/objects/mySales.xml) file that resulted in the [mySales.sql](https://github.com/wdonadelli/WebExample1/objects/mySales.sql) file (see [XSQLite](https://github.com/wdonadelli/XSQLite)), no improvements were made to SQL statements.
 
 The SQL statements were compiled using the sqlite3 package for Ubuntu (*Linux wd 4.15.0-72-generic #81-Ubuntu SMP Tue Nov 26 12:20:02 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux*) version *3.22.0-1ubuntu0.2*.
 
