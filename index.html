@@ -10,8 +10,8 @@
 		<meta name="rating" content="general" />
 		<meta name="revisit-after" content="2 days" />
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<script src="https://wdonadelli.github.io/wd/v2/wd.js"></script>
-		<link  href="https://wdonadelli.github.io/wd/v2/wd.css" rel="stylesheet" />
+		<link  href="lib/wd.css" rel="stylesheet" />
+		<script src="lib/wd.js"></script>
 		<script src="lib/mySales.js"></script>
 		<style>
 	</style>
@@ -27,12 +27,12 @@
 		</header>
 
 		<!--MAIN NAV-->
-		<nav class="wd-nav wd-box-black wd-text-title" data-wd-repeat="get{pages/menu.json}" >
+		<nav class="wd-nav wd-box-black wd-text-title" data-wd-repeat="get{lib/menu.json}" >
 			<a	data-wd-action="{{action}}" {{click}} href="#" class="{{icon}}" >{{menu}}</a>
 		</nav>
 		
 		<!--SUB MENUS TAB-->
-		<section data-wd-repeat="get{pages/menu.json}">
+		<section data-wd-repeat="get{lib/menu.json}">
 			<article id="{{id}}" class="wd-flyer">
 				<nav class="wd-nav wd-vertical wd-text-title">
 					<span	data-wd-action="open{#window}" data-wd-data="{{update}}" class="wd-icon-copy" >Update Records</span>

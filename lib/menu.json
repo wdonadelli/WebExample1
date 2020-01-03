@@ -5,8 +5,8 @@
 		"id":     "menu_clients",
 		"action": "tab{#menu_clients}",
 		"click":  "data-wd-click=\"\"",
-		"update": "wdLoad{get{pages/update.clients.html}}${#window}",
-		"tables": "wdLoad{get{pages/tables.clients.html}}${#window}"
+		"update": "wdLoad{get{lib/pages/update.clients.html}}${#window}",
+		"tables": "wdLoad{get{lib/pages/tables.clients.html}}${#window}"
 	},
 	{
 		"menu":   "products",
@@ -14,8 +14,8 @@
 		"id":     "menu_products",
 		"action": "tab{#menu_products}",
 		"click":  "",
-		"update": "wdLoad{get{pages/update.products.html}}${#window}",
-		"tables": "wdLoad{get{pages/tables.products.html}}${#window}"
+		"update": "wdLoad{get{lib/pages/update.products.html}}${#window}",
+		"tables": "wdLoad{get{lib/pages/tables.products.html}}${#window}"
 	},
 	{
 		"menu":   "sales",
@@ -23,7 +23,7 @@
 		"id":     "menu_sales",
 		"action": "tab{#menu_sales}",
 		"click":  "",
-		"update": "wdLoad{get{pages/update.sales.html}}${#window}",
-		"tables": "wdLoad{get{pages/tables.sales.html}}${#window}"
+		"update": "wdLoad{get{lib/pages/update.sales.html}}${#window}",
+		"tables": "wdLoad{get{lib/pages/tables.sales.html}}${#window}"
 	}
 ]

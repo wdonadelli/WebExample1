@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql>
+	<table name="clients">
+		<column name="name" type="text" notnull="">
+			<message onerror="type">Enter the customer name accordingly.</message>
+			<message onerror="notnull">Client name is required.</message>
+		</column>
+		<column name="birth" type="date" notnull="" max="DATE('now', '-18 years')">
+			<message onerror="type">Enter the date of birth accordingly.</message>
+			<message onerror="notnull">Date of birth is required.</message>
+			<message onerror="max">Customer must be over 18 years old.</message>
+		</column>
+		<column name="doc" type="number" notnull="" min="1" max="9999999" unique="">
+			<message onerror="type">Enter the customer document number.</message>
+			<message onerror="notnull">Document number is required.</message>
+			<message onerror="min">Document number must be from 1.</message>
+			<message onerror="max">Document number must be up to 9999999.</message>
+			<message onerror="unique">Document number already used.</message>
+		</column>
+	</table>
+	<table name="products">
+		<column name="name" type="text" notnull="" unique="">
+			<message onerror="type">Enter the product name accordingly.</message>
+			<message onerror="notnull">Product name is required.</message>
+			<message onerror="unique">Product already registered.</message>
+		</column>
+	</table>
+	<table name="sales">
+		<column name="client_id" type="key" table="clients">
+			<message onerror="type">Customer not registered.</message>
+		</column>
+		<column name="product_id" type="key" table="products">
+			<message onerror="type">Product not registered.</message>
+		</column>
+		<column name="value" type="number" notnull="" min="0.01">
+			<message onerror="type">Enter the value of the product.</message>
+			<message onerror="notnull">Product value is required.</message>
+			<message onerror="min">Minimum product value must be $ 0.01.</message>
+		</column>
+	</table>
+</sql>
