@@ -28,3 +28,5 @@ Given that the purpose of the application is to demonstrate how the tools work t
 The application has been tested using the Firefox package for Ubuntu *version 71.0 + build5-0ubuntu0.18.04.1*. On the server side were used Apache packages, version *2.4.29-1ubuntu4.11*, and PHP, both for Ubuntu, version *7.2.24-0ubuntu0.18.04.1*. Check if PHP sqlite3 package is enabled.
 
 [Click here](https://github.com/wdonadelli/WebExample1/objects/mySales.zip) to download the zip package with the application files. Be sure to give the proper permissions to the files so that they can be executed properly.
+
+[*Willian Donadelli* (wdonadelli@gmail.com)](wdonadelli@gmail.com)
