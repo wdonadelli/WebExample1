@@ -8,7 +8,7 @@ This project consists of a simple registration application to demonstrate the in
 
 The app has a table for recording customer data, another table for recording product data and a third table for recording product sales to customers. The app was called "My Sales".
 
-The tables were built using the XML structure contained in the [mySales.xml](https://github.com/wdonadelli/WebExample1/objects/mySales.xml) file that resulted in the [mySales.sql](https://github.com/wdonadelli/WebExample1/objects/mySales.sql) file (see [XSQLite](https://github.com/wdonadelli/XSQLite)), no improvements were made to SQL statements.
+The tables were built using the XML structure contained in the [mySales.xml](https://wdonadelli.github.io/WebExample1/objects/mySales.xml) file that resulted in the [mySales.sql](https://wdonadelli.github.io/WebExample1/objects/mySales.sql) file (see [XSQLite](https://github.com/wdonadelli/XSQLite)), no improvements were made to SQL statements.
 
 The SQL statements were compiled using the sqlite3 package for Ubuntu (*Linux wd 4.15.0-72-generic #81-Ubuntu SMP Tue Nov 26 12:20:02 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux*) version *3.22.0-1ubuntu0.2*.
 
@@ -27,6 +27,6 @@ Given that the purpose of the application is to demonstrate how the tools work t
 
 The application has been tested using the Firefox package for Ubuntu *version 71.0 + build5-0ubuntu0.18.04.1*. On the server side were used Apache packages, version *2.4.29-1ubuntu4.11*, and PHP, both for Ubuntu, version *7.2.24-0ubuntu0.18.04.1*. Check if PHP sqlite3 package is enabled.
 
-[Click here](https://github.com/wdonadelli/WebExample1/objects/mySales.zip) to download the zip package with the application files. Be sure to give the proper permissions to the files so that they can be executed properly.
+[Click here](https://wdonadelli.github.io/WebExample1/mySales.zip) to download the zip package with the application files. Be sure to give the proper permissions to the files so that they can be executed properly.
 
 *Willian Donadelli* ([wdonadelli@gmail.com](wdonadelli@gmail.com))
