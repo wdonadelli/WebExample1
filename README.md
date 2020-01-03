@@ -29,4 +29,4 @@ The application has been tested using the Firefox package for Ubuntu *version 71
 
 [Click here](https://wdonadelli.github.io/WebExample1/mySales.zip) to download the zip package with the application files. Be sure to give the proper permissions to the files so that they can be executed properly.
 
-*Willian Donadelli* ([wdonadelli@gmail.com](wdonadelli@gmail.com))
+_Willian Donadelli_ (<wdonadelli@gmail.com>)
